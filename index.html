@@ -89,7 +89,170 @@
     <section class="about-section">
       <h2>About the Portfolio</h2>
       <p>A professional photography portfolio showcasing stunning visual storytelling, creative portraiture, and high-quality event coverage. Highlighted works include landscape, portrait, and lifestyle photography captured with precision, artistic framing, and vibrant detail to bring every moment to life.</p>
-    </section>
+    </section><section class="portfolio-section" id="portfolio">
+  <div class="portfolio-container">
+
+    <div class="portfolio-header">
+      <div>
+        <span class="portfolio-label">SELECTED WORK</span>
+        <h2>Stories through <em>my lens.</em></h2>
+      </div>
+
+      <p>
+        A curated collection of portraits, celebrations, landscapes
+        and meaningful moments captured with creativity and emotion.
+      </p>
+    </div>
+
+    <!-- FILTERS -->
+    <div class="portfolio-filters">
+      <button class="portfolio-filter active" data-filter="all">All</button>
+      <button class="portfolio-filter" data-filter="portrait">Portraits</button>
+      <button class="portfolio-filter" data-filter="wedding">Weddings</button>
+      <button class="portfolio-filter" data-filter="event">Events</button>
+      <button class="portfolio-filter" data-filter="landscape">Landscapes</button>
+    </div>
+
+    <!-- GALLERY -->
+    <div class="studio-gallery">
+
+      <!-- Featured image -->
+      <div class="studio-item studio-large portrait">
+        <img
+          src="images/portrait-01.jpg"
+          alt="Professional portrait photography"
+          loading="lazy"
+        >
+
+        <div class="studio-caption">
+          <span>PORTRAIT</span>
+          <h3>Natural Light</h3>
+        </div>
+      </div>
+
+      <!-- Landscape -->
+      <div class="studio-item studio-wide landscape">
+        <img
+          src="images/landscape-01.jpg"
+          alt="Landscape photography"
+          loading="lazy"
+        >
+
+        <div class="studio-caption">
+          <span>LANDSCAPE</span>
+          <h3>Into the Wild</h3>
+        </div>
+      </div>
+
+      <!-- Wedding -->
+      <div class="studio-item wedding">
+        <img
+          src="images/wedding-01.jpg"
+          alt="Wedding photography"
+          loading="lazy"
+        >
+
+        <div class="studio-caption">
+          <span>WEDDING</span>
+          <h3>Forever Together</h3>
+        </div>
+      </div>
+
+      <!-- Event -->
+      <div class="studio-item event">
+        <img
+          src="images/event-01.jpg"
+          alt="Event photography"
+          loading="lazy"
+        >
+
+        <div class="studio-caption">
+          <span>EVENT</span>
+          <h3>The Celebration</h3>
+        </div>
+      </div>
+
+      <!-- Portrait -->
+      <div class="studio-item studio-wide portrait">
+        <img
+          src="images/portrait-02.jpg"
+          alt="Creative portrait photography"
+          loading="lazy"
+        >
+
+        <div class="studio-caption">
+          <span>PORTRAIT</span>
+          <h3>Character</h3>
+        </div>
+      </div>
+
+      <!-- Landscape -->
+      <div class="studio-item studio-tall landscape">
+        <img
+          src="images/landscape-02.jpg"
+          alt="Mountain landscape photography"
+          loading="lazy"
+        >
+
+        <div class="studio-caption">
+          <span>LANDSCAPE</span>
+          <h3>Golden Hour</h3>
+        </div>
+      </div>
+
+      <!-- Wedding -->
+      <div class="studio-item wedding">
+        <img
+          src="images/wedding-02.jpg"
+          alt="Wedding couple photography"
+          loading="lazy"
+        >
+
+        <div class="studio-caption">
+          <span>WEDDING</span>
+          <h3>Moments Together</h3>
+        </div>
+      </div>
+
+      <!-- Event -->
+      <div class="studio-item event">
+        <img
+          src="images/event-02.jpg"
+          alt="Celebration event photography"
+          loading="lazy"
+        >
+
+        <div class="studio-caption">
+          <span>EVENT</span>
+          <h3>Unforgettable Night</h3>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- FULLSCREEN LIGHTBOX -->
+<div class="gallery-lightbox" id="galleryLightbox">
+
+  <button class="lightbox-close" id="lightboxClose">
+    &times;
+  </button>
+
+  <button class="lightbox-prev" id="lightboxPrev">
+    &#10094;
+  </button>
+
+  <img id="lightboxImage" src="" alt="">
+
+  <button class="lightbox-next" id="lightboxNext">
+    &#10095;
+  </button>
+
+  <div class="lightbox-title" id="lightboxTitle"></div>
+
+</div>
 
     <section class="gallery-grid">
       <div class="card">
@@ -121,4 +284,401 @@
   </footer>
 
 </body>
-</html>
+</html>/* =========================================
+   PROFESSIONAL STUDIO GALLERY
+========================================= */
+
+.portfolio-section {
+  background: #0b0b0b;
+  color: #fff;
+  padding: 120px 0;
+}
+
+.portfolio-container {
+  width: min(1180px, calc(100% - 48px));
+  margin: auto;
+}
+
+/* HEADER */
+
+.portfolio-header {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 70px;
+  align-items: end;
+  margin-bottom: 55px;
+}
+
+.portfolio-label {
+  display: block;
+  color: #999;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  margin-bottom: 20px;
+}
+
+.portfolio-header h2 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(50px, 6vw, 82px);
+  line-height: .9;
+  font-weight: 500;
+  letter-spacing: -2px;
+}
+
+.portfolio-header h2 em {
+  font-style: italic;
+}
+
+.portfolio-header p {
+  color: #999;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+
+/* FILTERS */
+
+.portfolio-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+  padding-bottom: 20px;
+}
+
+.portfolio-filter {
+  background: none;
+  border: none;
+  color: #777;
+  cursor: pointer;
+  font-size: 10px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  padding: 8px 0;
+  transition: .3s;
+}
+
+.portfolio-filter:hover,
+.portfolio-filter.active {
+  color: #fff;
+  border-bottom: 1px solid #fff;
+}
+
+
+/* GALLERY */
+
+.studio-gallery {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: 230px;
+  gap: 14px;
+}
+
+.studio-item {
+  position: relative;
+  grid-column: span 4;
+  grid-row: span 1;
+  overflow: hidden;
+  cursor: pointer;
+  background: #171717;
+}
+
+.studio-item.studio-large {
+  grid-column: span 4;
+  grid-row: span 2;
+}
+
+.studio-item.studio-wide {
+  grid-column: span 8;
+}
+
+.studio-item.studio-tall {
+  grid-row: span 2;
+}
+
+.studio-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition:
+    transform .8s cubic-bezier(.2,.7,.2,1),
+    filter .5s;
+}
+
+.studio-item:hover img {
+  transform: scale(1.07);
+  filter: brightness(.65);
+}
+
+
+/* IMAGE OVERLAY */
+
+.studio-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,.75),
+      transparent 55%
+    );
+  opacity: 0;
+  transition: .4s;
+}
+
+.studio-item:hover::after {
+  opacity: 1;
+}
+
+
+/* CAPTION */
+
+.studio-caption {
+  position: absolute;
+  left: 25px;
+  bottom: 22px;
+  z-index: 2;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: .4s;
+}
+
+.studio-item:hover .studio-caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.studio-caption span {
+  display: block;
+  font-size: 8px;
+  letter-spacing: .25em;
+  color: #bbb;
+  margin-bottom: 5px;
+}
+
+.studio-caption h3 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 28px;
+  font-weight: 500;
+}
+
+
+/* FILTER ANIMATION */
+
+.studio-item.hide {
+  display: none;
+}
+
+
+/* =========================================
+   LIGHTBOX
+========================================= */
+
+.gallery-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 5000;
+  background: rgba(0,0,0,.97);
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  padding: 50px;
+}
+
+.gallery-lightbox.active {
+  display: flex;
+}
+
+.gallery-lightbox img {
+  max-width: 90vw;
+  max-height: 82vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+
+/* CLOSE */
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+
+  background: none;
+  border: none;
+  color: #fff;
+
+  font-size: 42px;
+  font-weight: 200;
+
+  cursor: pointer;
+  z-index: 10;
+}
+
+
+/* PREVIOUS / NEXT */
+
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.2);
+
+  color: #fff;
+
+  width: 50px;
+  height: 50px;
+
+  cursor: pointer;
+
+  transition: .3s;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  background: #fff;
+  color: #000;
+}
+
+.lightbox-prev {
+  left: 25px;
+}
+
+.lightbox-next {
+  right: 25px;
+}
+
+
+/* TITLE */
+
+.lightbox-title {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  color: #aaa;
+
+  font-size: 9px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .portfolio-section {
+    padding: 90px 0;
+  }
+
+  .portfolio-header {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .studio-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 280px;
+  }
+
+  .studio-item,
+  .studio-item.studio-large,
+  .studio-item.studio-wide {
+    grid-column: span 1;
+  }
+
+  .studio-item.studio-wide {
+    grid-column: span 2;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .portfolio-section {
+    padding: 75px 0;
+  }
+
+  .portfolio-container {
+    width: calc(100% - 32px);
+  }
+
+  .portfolio-header h2 {
+    font-size: 52px;
+  }
+
+  .portfolio-filters {
+    gap: 17px;
+  }
+
+  .studio-gallery {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 300px;
+  }
+
+  .studio-item,
+  .studio-item.studio-large,
+  .studio-item.studio-wide,
+  .studio-item.studio-tall {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .studio-item.studio-large {
+    height: 430px;
+  }
+
+  .studio-item.studio-tall {
+    height: 430px;
+  }
+
+  .studio-caption {
+    opacity: 1;
+    transform: none;
+  }
+
+  .studio-item::after {
+    opacity: 1;
+  }
+
+  .gallery-lightbox {
+    padding: 20px;
+  }
+
+  .lightbox-prev,
+  .lightbox-next {
+    width: 40px;
+    height: 40px;
+  }
+
+  .lightbox-prev {
+    left: 10px;
+  }
+
+  .lightbox-next {
+    right: 10px;
+  }
+
+}
